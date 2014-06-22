@@ -27,28 +27,11 @@ The Raw Data Set
 The data set used in this project is from the Human Activity Recognition Using Smartphones Dataset. The data set is here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 The web site for the project is here: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones.
 
-From the raw data set readme file, an explanation of the raw data files to be put into R:
-
-"- 'README.txt'
-
-- 'features_info.txt': Shows information about the variables used on the feature vector.
-
-- 'features.txt': List of all features.
-
-- 'activity_labels.txt': Links the class labels with their activity name.
-
-- 'train/X_train.txt': Training set.
-
-- 'train/y_train.txt': Training labels.
-
-- 'test/X_test.txt': Test set.
-
-- 'test/y_test.txt': Test labels."
-
 
 The raw data is split into two folders, train and test. There is also an activity_labels.txt, features_info.txt, and features.txt files that apply to the train and test folders. Within each train and test file, there are
 
 Tidying Up The Data
+
 The column names in the xtest/xtrain text files within the train and test folders correspond to the row names from the features file.
 
 Step 1. Load packages into R: plyr and data.table
@@ -76,7 +59,10 @@ Step 5. Read train folder files into R
   The same steps are used for the train folder files as the test folder files 
 
 Step 6. Combine test and train data into one data set
+
 Step 7. Create the tidy data set in R
+  7a. Find colMeans by Activity and by Subject for each variable
+
 Step 8. Create a text file with the tidy data set
 
 
