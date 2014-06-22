@@ -20,7 +20,7 @@ library("data.table", lib.loc="/Library/Frameworks/R.framework/Versions/3.0/Reso
 # Each feature vector is a row on the text file.
 
 # Set working directory for Features
-setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/Course Project/UCI Har Dataset/")
+setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/UCI Har Dataset/")
 
 feat <- read.table("features.txt") # 561 rows; 2 columns
 tfeat <- t(feat) # transposes feat rows to columns
@@ -41,7 +41,7 @@ labels <- read.table("activity_labels.txt")
 
 ### === Test Set ===
 # Set working directory for Test folder
-setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/Course Project/UCI Har Dataset/test")
+setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/UCI Har Dataset/test")
 
 # Reads in Test folder data
 subjtest <- read.table("subject_test.txt") #2947 rows; 1 column "V1"
@@ -67,7 +67,7 @@ testbind2 <- subset(testbind1, select=c(Data, Subject, Activity:67)) # reorder c
 
 # === Training Set ===
 # Set working directory for Train folder
-setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/Course Project/UCI Har Dataset/train")
+setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/UCI Har Dataset/train")
 
 # Reads in Train folder data
 subjtrain1 <- read.table("subject_train.txt") #7352 rows; 1 column "V1"
@@ -98,7 +98,7 @@ df <- rbind(testbind2,trainbind2)
 # Average of each variable by Activity
 # Activity: Column 3 of df
 # Variable: Column 4:68 of df
-
+colMeans(df[4:68])
 
 
 ### === Create tidy data set ===
