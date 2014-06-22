@@ -94,17 +94,18 @@ trainbind2 <- subset(trainbind1, select=c(Data, Subject, Activity:67)) # reorder
 df <- rbind(testbind2,trainbind2)
 
 ### === Average of each variable for each activity and each subject === 
-
 # Average of each variable by Activity
 # Activity: Column 3 of df
-# Variable: Column 4:68 of df
-colMeans(df[4:68])
+# Subject: Column 4:68 of df
 
+ActivityMean <- ddply(df[4:68], .(df$Activity),colMeans)
+SubjectMean <- ddply(df[4:68], .(df$Subject),colMeans)
 
 ### === Create tidy data set ===
 
 # set correct working directory
 setwd("~/Documents/Coursera - Data Science Specialization/Part 3 - Getting and Cleaning Data/Course Project/")
 
-# write.table
-write.table(df, file = "tidydata.txt")
+# write.table both ActivityMean and SubjectMean
+write.table(ActivityMean,file = "tidydata.txt", col.names=T)
+write.table(SubjectMean,file = "tidydata.txt", col.names=T, append=T)
